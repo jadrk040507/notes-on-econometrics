@@ -5,13 +5,13 @@ Recall that given the basis for an $n$ dimensional vector space $V$, we can repr
 $$T: V \to V$$
 as an $n \times n$ matrix $A$. Unfortunately, if you choose a different basis for $V$, the matrix representing the linear transformation $T$ will be quite different from the original matrix $A$. This section's goal is to find out a clean criterion for when two matrices actually represent the same linear transformation but under different choice of bases.
 
-\begin{definition}\label{def:decomposition}
+<!-- \begin{definition}\label{def:decomposition} -->
 
 Two $n \times n$ matrices $A$ and $B$ are similar if there is and invertible matrix $C$ such that
 $$
 A = C^{-1}BC
 $$
-\end{definition}
+<!-- \end{definition} -->
 
 We want to see that two matrices are similar precisely when they represent the same linear transformation. Choose two bases for the vector space $V$, say ${v_1, \ldots, v_n}$ (the $v$ basis) and ${w_1, \ldots, w_n}$ (the $w$ basis). Let $A$ be the matrix representing the linear transformation $T$ for the basis and let $B$ be the matrix representing the linear transformation for the $w$ basis. We want to construct the matrix $C$ so that $A = C^{-1}BC$.
 

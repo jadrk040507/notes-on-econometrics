@@ -1,5 +1,5 @@
 --- 
-title: "Notes on maths for economists"
+title: "Notes on econometrics"
 author: "Juan Alvaro Díaz Raimond Kedilhac"
 date: "2024-12-09"
 site: bookdown::bookdown_site
@@ -17,7 +17,7 @@ github-repo: "rstudio/bookdown-demo"
 
 # About  
 
-Welcome to this **maths for economists study guide**, a resource designed to support undergraduate students in their journey to understanding maths. These personal notes are based on lectures attended at **Universidad Panamericana**, alongside additional materials such as lecture notes, websites, books, and other sources.  
+Welcome to this **econometrics study guide**, a resource designed to support undergraduate students in their journey to understanding econometrics. These personal notes are based on lectures attended at **Universidad Panamericana**, alongside additional materials such as lecture notes, websites, books, and other sources.  
 
 While this guide is crafted to offer a quick and accessible approach to the subject, it is strongly recommended that students consult the original resources for a more comprehensive understanding.  
 

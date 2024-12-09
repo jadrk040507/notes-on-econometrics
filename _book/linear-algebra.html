@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>References | Notes on econometrics</title>
+  <title>Chapter 8 Linear Algebra | Notes on econometrics</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 set in the _output.yml file.
 The HTML output format for this example is bookdown::gitbook,</p>" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="References | Notes on econometrics" />
+  <meta property="og:title" content="Chapter 8 Linear Algebra | Notes on econometrics" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ The HTML output format for this example is bookdown::gitbook,</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="References | Notes on econometrics" />
+  <meta name="twitter:title" content="Chapter 8 Linear Algebra | Notes on econometrics" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 set in the _output.yml file.
@@ -36,8 +36,8 @@ The HTML output format for this example is bookdown::gitbook,</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="linear-algebra.html"/>
-
+<link rel="prev" href="sharing-your-book.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -230,31 +230,82 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered hasAnchor">
-<h1>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div class="csl-entry">
-Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.org/knitr/">http://yihui.org/knitr/</a>.
+<div id="linear-algebra" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Linear Algebra<a href="linear-algebra.html#linear-algebra" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="similar-matrices" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Similar Matrices<a href="linear-algebra.html#similar-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Recall that given the basis for an <span class="math inline">\(n\)</span> dimensional vector space <span class="math inline">\(V\)</span>, we can represent a linear transformation
+<span class="math display">\[T: V \to V\]</span>
+as an <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(A\)</span>. Unfortunately, if you choose a different basis for <span class="math inline">\(V\)</span>, the matrix representing the linear transformation <span class="math inline">\(T\)</span> will be quite different from the original matrix <span class="math inline">\(A\)</span>. This section’s goal is to find out a clean criterion for when two matrices actually represent the same linear transformation but under different choice of bases.</p>
+<!-- \begin{definition}\label{def:decomposition} -->
+<p>Two <span class="math inline">\(n \times n\)</span> matrices <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are similar if there is and invertible matrix <span class="math inline">\(C\)</span> such that
+<span class="math display">\[
+A = C^{-1}BC
+\]</span>
+<!-- \end{definition} --></p>
+<p>We want to see that two matrices are similar precisely when they represent the same linear transformation. Choose two bases for the vector space <span class="math inline">\(V\)</span>, say <span class="math inline">\({v_1, \ldots, v_n}\)</span> (the <span class="math inline">\(v\)</span> basis) and <span class="math inline">\({w_1, \ldots, w_n}\)</span> (the <span class="math inline">\(w\)</span> basis). Let <span class="math inline">\(A\)</span> be the matrix representing the linear transformation <span class="math inline">\(T\)</span> for the basis and let <span class="math inline">\(B\)</span> be the matrix representing the linear transformation for the <span class="math inline">\(w\)</span> basis. We want to construct the matrix <span class="math inline">\(C\)</span> so that <span class="math inline">\(A = C^{-1}BC\)</span>.</p>
+<p>Recall that given the <span class="math inline">\(v\)</span> basis, we can write each vector <span class="math inline">\(z \in V\)</span> as an <span class="math inline">\(n \times 1\)</span> column vector as follows: we know that there are unique scalars <span class="math inline">\(a_1, \ldots, a_n\)</span> with
+<span class="math display">\[
+z = a_1 v_1 + \dots + a_n v_n
+\]</span>
+We then write <span class="math inline">\(z\)</span>, with respect to the <span class="math inline">\(v\)</span> basis, as the column vector:
+<span class="math display">\[
+\begin{pmatrix}
+a_1 \\
+\vdots \\
+a_n
+\end{pmatrix}
+\]</span>
+Similarily, then are unique scalars <span class="math inline">\(w_1, \dots, w_n\)</span> so that
+<span class="math display">\[
+z = b_1 w_1 + \dots + b_n w_n,
+\]</span>
+meaning that with respect to the <span class="math inline">\(w\)</span> basis, the vector <span class="math inline">\(z\)</span> is the column vector:
+<span class="math display">\[
+\begin{pmatrix}
+b_1 \\
+\vdots \\
+b_n
+\end{pmatrix}
+\]</span></p>
+<p>The desired matrix <span class="math inline">\(C\)</span> will be the matrix such that
+<span class="math display">\[
+C
+\begin{pmatrix}
+a_1 \\
+\vdots \\
+a_n
+\end{pmatrix}
+=
+\begin{pmatrix}
+b_1 \\
+\vdots \\
+b_n
+\end{pmatrix}.
+\]</span>
+If <span class="math inline">\(C = (c_{ij})\)</span>, then the entries <span class="math inline">\(c_{ij}\)</span> are precisely the numbers which yield:
+<span class="math display">\[
+w_i = c_{i1} v_1 + \dots + c_{in} v_n.
+\]</span>
+To commute, meaning that <span class="math inline">\(CA = BC\)</span> or
+<span class="math display">\[
+A = C^{-1}BC,
+\]</span>
+as desired.
+Determining two matrices are similar is a type of result that shows throughout math and physics. Regularly you must choose some coordinate system (some basis) in order to write down anything at all, but the underlying math or physics that you are interested in is independent of the initial choice. The key question becomes: what is preserved when the coordinate system is changed? Similar matrices allow us to understand these questions. </p>
 </div>
-<div class="csl-entry">
-———. 2024. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.
+<div id="eigenvalues-and-eigenvectors" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Eigenvalues and Eigenvectors<a href="linear-algebra.html#eigenvalues-and-eigenvectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
 </div>
 </div>
-</div>
-
-
-
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="linear-algebra.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="sharing-your-book.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -285,7 +336,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/08-references.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/07-notes_econometrics.Rmd",
 "text": "Edit"
 },
 "history": {
