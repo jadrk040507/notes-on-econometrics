@@ -25,7 +25,8 @@ jobs:
 
     - name: Build Bookdown Site
       run: |
-        Rscript -e 'bookdown::render_book("index.Rmd", output_dir = "_book")'
+        Rscript -e 'rmarkdown::clean_site(preview = FALSE)'
+        Rscript -e 'rmarkdown::render_site(encoding = 'UTF-8')'
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
