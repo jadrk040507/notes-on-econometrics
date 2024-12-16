@@ -81,7 +81,7 @@
                     ]
                 ]
             },
-            "note": "R package version 1.48",
+            "note": "R package version 1.49",
             "title": "Knitr: A general-purpose package for dynamic report generation in r",
             "title-short": "Knitr",
             "type": "book"
@@ -142,7 +142,7 @@
                     ]
                 ]
             },
-            "note": "R package version 2.28",
+            "note": "R package version 2.29",
             "title": "Rmarkdown: Dynamic documents for r",
             "title-short": "Rmarkdown",
             "type": "book"
