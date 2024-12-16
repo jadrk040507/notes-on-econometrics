@@ -1,7 +1,7 @@
 --- 
 title: "Notes on econometrics"
-author: "Juan Alvaro Díaz Raimond Kedilhac"
-date: "2024-12-15"
+# author: "Juan Alvaro Díaz Raimond Kedilhac"
+date: "2024-12-16"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography:
@@ -12,7 +12,7 @@ description: |
   set in the _output.yml file.
   The HTML output format for this example is bookdown::gitbook,
 link-citations: yes
-github-repo: "rstudio/bookdown-demo"
+github-repo: "jadrk040507/notes-on-econometrics"
 ---
 
 # About  
